@@ -1,8 +1,8 @@
 @font-face {
 	font-family: 'Gilroy';
     src: local('Gilroy Light'), local('Gilroy-Light'), 
-		url('fonts/gilroylight.woff2') format('woff2'),
-        url('fonts/gilroylight.woff') format('woff');        
+	url('fonts/gilroylight.woff2') format('woff2'),
+    url('fonts/gilroylight.woff') format('woff');        
     font-weight: 300;
     font-style: normal;
 }
@@ -10,8 +10,8 @@
 @font-face {
     font-family: 'Gilroy';
     src: local('Gilroy Extra-Bold'), local('Gilroy-Extra-Bold'), 
-		url('fonts/gilroyextrabold.woff2') format('woff2'),
-        url('fonts/gilroyextrabold.woff') format('woff');		
+	url('fonts/gilroyextrabold.woff2') format('woff2'),
+    url('fonts/gilroyextrabold.woff') format('woff');		
     font-weight: 800;
     font-style: normal;
 }
@@ -19,8 +19,8 @@
 @font-face {
     font-family: 'Open Sans';
     src: local('Open Sans Light'), local('Open-Sans-Light'), 
-		url('fonts/opensans-light.woff2') format('woff2'),
-        url('fonts/opensans-light.woff') format('woff');       
+	url('fonts/opensans-light.woff2') format('woff2'),
+    url('fonts/opensans-light.woff') format('woff');       
     font-weight: 300;
     font-style: normal;
 }
@@ -28,8 +28,8 @@
 @font-face {
     font-family: 'Open Sans';
     src: local('Open Sans Regular'), local('Open-Sans-Regular'), 
-		url('fonts/opensans.woff2') format('woff2'),
-        url('fonts/opensans.woff') format('woff');         
+	url('fonts/opensans.woff2') format('woff2'),
+    url('fonts/opensans.woff') format('woff');         
     font-weight: normal;
     font-style: normal;
 }
@@ -101,12 +101,16 @@ header .container {
 	position: relative;
 }
 
-.main_navigation {
-	padding-top: 23px;
+.main_navigation_list,
+.footer_navigation_list {
+	list-style: none;
+	margin: 0;
 	padding: 22px 0 53px;
 }
 
-.subnavigation_1, .subnavigation_2 {
+.submenu, 
+.main_navigation_list,
+.footer_navigation_list {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -117,11 +121,14 @@ header .container {
 	justify-content: space-between;	
 }
 
-.subnavigation_1 {
-	margin-bottom: 35px;
+.submenu {
+	margin: 0;
+	margin-bottom: 10px;
+	list-style: none;
+	padding-left: 0;	
 }
 
-.subnavigation_1 a {
+.submenu a {
 	position: relative;
 }
 
@@ -131,7 +138,8 @@ header .container {
 	margin-top: 9px;
 }
 
-.subnavigation_2 {
+.main_navigation_list,
+.footer_navigation_list {
 	margin-bottom: 0;
 	font-family: "Gilroy", Arial, sans-serif;
 	font-size: 18px;
@@ -142,14 +150,12 @@ header .container {
 }
 
 .logo {
-	font-family: "Gilroy", Arial, sans-serif;
-	font-size: 48px;
-	font-weight: 800;
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 }
 
-header .logo {
-	width: 100%;	
+.logo_header {
+	width: 100%;
+	padding-top: 23px;	
 }
 
 .search {
@@ -162,11 +168,11 @@ header .logo {
 	border: none;
 	color: #000;
 	padding-left: 40px;
-	opacity: .3;
+	opacity: 0.3;
 	width: 356px;
 	height: 48px;
 	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	vertical-align: top;
 }
 
@@ -174,7 +180,7 @@ header .logo {
 	border-bottom: 2px solid #000;
 }
 
-.search a {
+.search button {
 	display: none;
 	width: 85px;
 	height: 48px;
@@ -188,21 +194,22 @@ header .logo {
 	-ms-flex-pack: center;
 	justify-content: center;
 	vertical-align: top;
-	
+	background-color: transparent;
+	margin-left: -4px;
 }
 
-.search input:focus+a {
+.search input:focus+button {
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
 	display: inline-flex;
 }
 
-.search input:focus+a:hover {
+.search input:focus+button:hover {
 	background-color: #000;
 	color: #fff;
 }
 
-.search input+a:active {
+.search input+button:active {
 	background-color: #000;
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
@@ -227,11 +234,11 @@ header .logo {
 	padding-left: 28px;
 }
 
-.login_header span {
+.login span {
 	position: relative;	
 }
 
-.login_header span::before {	
+.login span::before {	
 	display: block;
     position: absolute;
     top: 5px;
@@ -329,6 +336,8 @@ header .logo {
 	font-weight: 300;
 	letter-spacing: normal;
 	max-height: 164px;	
+	list-style: none;
+	margin: 0;
 }
 
 .catalog_header:hover .catalog_header_list {
@@ -359,24 +368,34 @@ header .logo {
 footer {
 	background-color: #464646;
 	color: #fff;
-	padding-top: 65px;
-	padding-bottom: 55px;
+	padding-top: 60px;
+	padding-bottom: 50px;
 }
 
 footer .logo {
-	color: #fbc301;
 	padding-top: 5px;
+	width: 50%;
 }
-
+.footer_wrap{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	margin-bottom: 0;
+}
 footer .login {
 	margin-left: auto;
 	margin-right: 0;
 	width: 250px;
 	text-align: right;
-	opacity: .6;
+	opacity: 0.6;
 }
 
-.login_footer a::before {
+.login_footer span::before {
 	background: url(../img/user_footer.svg) center no-repeat; 
 }
 
@@ -390,21 +409,24 @@ footer .login {
 
 .compare_footer {
 	margin-left: 0;	
-	opacity: .6;
+	opacity: 0.6;
 }
  
 .cart_footer {
-	opacity: .6;
+	opacity: 0.6;
 }
 
-footer .subnavigation_1 {
+footer .submenu {
     margin-bottom: 13px;
+	width: 50%;	
 }
 
-footer .subnavigation_2 {
+.footer_navigation_list {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
+	list-style:none;
+	padding-left: 0;
 }
 
 footer .delivery,
@@ -427,12 +449,13 @@ footer .guarantee {
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	margin-bottom: 9px;
+	margin-bottom: 0;
+	height: 0;
 }
 
 .contacts_secondary p {
 	position: relative;
-	top: -44px
+	top: -95px
 }
 
 .external_link {
@@ -444,13 +467,14 @@ footer .guarantee {
 	-webkit-box-pack: end;
 	-ms-flex-pack: end;
 	justify-content: end;
+	align-items: flex-start;
 	position: relative;
 }
 
 .external_link::before {	
 	display: block;
     position: absolute;
-    bottom: 10px;
+    bottom: 23px;
 	left: 0px;
     width: 80px;
     height: 7px;
@@ -461,6 +485,8 @@ footer .guarantee {
 .social {
 	margin-right: -109px;
 	margin-left: auto;
+	margin-bottom: 0;
+	margin-top: 0;
 }
 
 .social li {
@@ -469,16 +495,16 @@ footer .guarantee {
 }
 
 .social img {
-	opacity: .3;
+	opacity: 0.3;
 }
 
 .social img:hover {
-	opacity: .6;
+	opacity: 0.6;
 	border: none;
 }
 
 .social a:focus img {
-	opacity: .1;
+	opacity: 0.3;
 	border: none;
 }
 
@@ -494,6 +520,11 @@ footer .guarantee {
 /* ======================СЛАЙДЕР 1========================= */
 .slider .container {
 	position: relative;
+}
+.slider_list{
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
 }
 
 .slider h3 {
@@ -628,8 +659,10 @@ footer .guarantee {
 }
 
 .slider_charakt {
+	font-family: "Gilroy", Arial, sans-serif;
 	font-size: 36px;
 	line-height: 48px;
+	font-weight: 300;
 }
 
 .slider_charakt td {
@@ -685,6 +718,9 @@ img[src*="slider-3"]{
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
 }
 
 .popular_item  div {
@@ -710,7 +746,7 @@ img[src*="slider-3"]{
 .popular_item:active p,
 .popular_item:focus img,
 .popular_item:focus p{
-	opacity: .3;
+	opacity: 0.3;
 }
 
 .popular_item:nth-of-type(2) div {
@@ -752,6 +788,7 @@ img[src*="slider-3"]{
 	width: 280px;
 	border-right: 7px solid #000;
 	padding-top: 80px;
+	padding-bottom: 50px;
 }
 
 .tabs_button label {
@@ -771,7 +808,7 @@ img[src*="slider-3"]{
 }
 
 .tabs_button label:active, 
-.tabs_button label:focus {
+.tabs_button label:focus{
 	color: #f7e184;
 	background-color: #000;
 }
@@ -881,6 +918,9 @@ label:focus  .services_button {
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
 }
 
 .brand_item:hover img {
@@ -965,6 +1005,8 @@ img[src="img/map.jpg"]{
 	letter-spacing: 1px;
 	line-height: 40px;
 	margin: 59px 0 60px;
+	list-style:none;
+	padding-left: 0;
 }
 
 .transport_company li {
@@ -999,7 +1041,7 @@ img[src="img/map.jpg"]{
 .nav_contacts:hover a,
 .footer_navigation li:hover,
 .academy_link img:hover {
-	opacity: .6;
+	opacity: 0.6;
 }
 
 .footer_navigation .cart_footer:hover,
@@ -1036,7 +1078,7 @@ img[src="img/map.jpg"]{
 .footer_navigation .cart_footer:focus,
 .footer_navigation .compare_footer:focus,
 .footer_navigation .login_footer:focus {
-	opacity: .3;
+	opacity: 0.3;
 }
 
 /* ======================ВСПЛЫВАЮЩИЕ ОКНА========================= */
@@ -1685,6 +1727,7 @@ img[src="img/map.jpg"]{
 	background-color: #ebebeb;
 	margin: 0 0 30px 0;
 	list-style: none;
+	padding-left: 0;
 	font-family: "Gilroy", Arial, sans-serif;
 	font-size: 16px;
 	font-weight: 800;
