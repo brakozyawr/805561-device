@@ -13,20 +13,22 @@
 				<ul class="subnavigation_1"><!-- да, тупое название класса, но если они только стилем отличаются?!! -->
 					<li class="logo logo_header"><a href="index.html">DEVICE</a></li>
 					<li class="search"><input type="search" name="search" placeholder="Поиск по сайту"><a href="#">Найти</a></li>
-					<li class="login login_header"><a href="#">Войти</a></li>
+					<li class="login login_header">
+						<span class="unauthorized_user "><a href="#">Войти</a></span>
+						<span class="authorized_user none">Валентин Петухов<a href="#">Выйти</a>
+					</li>
 					<li class="compare compare_header"><a href="#">Сравнить</a></li>
 					<li class="cart cart_header"><a href="#">Корзина</a></li>
 				</ul>
 				<ul class="subnavigation_2">
-					<li class="katalog"><a class="katalog_link" href="#">Каталог товаров</a>
-						<ul class="katalog_list">
+					<li class="catalog_header"><a class="catalog_link" href="#">Каталог товаров</a>
+						<ul class="catalog_header_list">
 							<li><a href="#">Виртуальная реальность</a></li>
-							<li><a href="#">Моноподы для селфи</a></li>
+							<li><a href="monopods_for_selfies.html">Моноподы для селфи</a></li>
 							<li><a href="#">Экшн-камеры</a></li>
 							<li><a href="#">Фитнес-браслеты</a></li>
 							<li><a href="#">Умные часы</a></li>
 							<li><a href="#">Квадрокоптеры</a></li>							
-							
 						</ul>
 					</li>
 					<li class="delivery"><a href="#">Доставка</a></li>
@@ -59,7 +61,7 @@
 						<div class="slider_desc">
 							<h3>Делай селфи,<br>как Бен Стиллер!</h3>
 							<p>Самая длинная палка для селфи доступна в нашем магазине.<br> Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
-							<a class="button" href="#"><span>Подробнее</span></a>
+							<a class="button" href="#">Подробнее</a>
 							<table>
 								<tr class="slider_charakt">
 									<td>8,5 м</td>
@@ -81,7 +83,7 @@
 						<div class="slider_desc">
 							<h3>Худеем <br> правильно!</h3>
 							<p>Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
-							<a class="button" href="#"><span>Подробнее</span></a>
+							<a class="button" href="#">Подробнее</a>
 							<table>
 								<tr class="slider_charakt">
 									<td>48 часов</td>								
@@ -100,7 +102,7 @@
 						<div class="slider_desc">
 							<h3>Порхает как бабочка, жалит как пчела!</h3>
 							<p>Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
-							<a class="button" href="#"><span>Подробнее</span></a>
+							<a class="button" href="#">Подробнее</a>
 							<table>
 								<tr class="slider_charakt">
 									<td>800 м</td>
@@ -129,10 +131,12 @@
 						<p>Виртуальная <br> реальность</p>
 					</li>
 					<li class="popular_item">
-						<div>
-							<img src="img/popular-2.svg"   width="86" height="117" alt="Моноподы для селфи">								
-						</div>
-						<p>Моноподы <br> для селфи</p>
+						<a href="monopods_for_selfies.html">
+							<div>
+								<img src="img/popular-2.svg"   width="86" height="117" alt="Моноподы для селфи">							
+							</div>
+							<p>Моноподы <br> для селфи</p>
+						</a>
 					</li>
 					<li class="popular_item">
 						<div>
@@ -217,14 +221,14 @@
 					<li>Автотрейдинг</li>
 					<li>ЖелДорЭкспедиция</li>
 				</ul>
-				<a class="button" href="#"><span>Подробнее о нас</span></a>				
+				<a class="button" href="#">Подробнее о нас</a>				
 			</section>
 			
 			<section class="contacts">
 				<h3>Контакты</h3>
 				<p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
 				<a href="#map"><img src="img/map.jpg" width="560" height="222" alt=""></a>
-				<a class="button" href="#"><span>Напишите нам</span></a>									
+				<a class="button" href="#">Напишите нам</a>									
 			</section>
 		</div> 
 		</div>		
@@ -235,7 +239,10 @@
 			<nav class="footer_navigation">
 				<ul class="subnavigation_1">
 					<li class="logo"><a href="index.html">DEVICE</a></li>
-					<li class="login login_footer"><a href="#">Войти</a></li>
+					<li class="login login_footer">
+						<span class="unauthorized_user "><a href="#">Войти</a></span>
+						<span class="authorized_user none">Валентин Петухов<a href="#">Выйти</a>
+					</li>
 					<li class="compare compare_footer"><a href="#">Сравнить</a></li>
 					<li class="cart cart_footer"><a href="#">Корзина</a></li>		
 				</ul>
@@ -248,7 +255,7 @@
 			</nav>
 			<div class="contacts_secondary">
 				<p>г. Москва, ул. Строителей, 15 </p>
-				<p>Тел.: +7 (495) 495-95-95</p>	
+				<<p><a href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a></p>
 			</div>	
 			<div class="external_link">
 				<ul class="social">
